@@ -37,6 +37,12 @@ else:
 #EXPRESIONES REGULARES
 
 #1
+from modulo import datos
+import re
+path = './data/re/short_tweets.csv'
+
+s = '@robot9! @robot4& I have a good feeling that the show isgoing to be amazing! @robot9$ @robot7%'
+s
 
 
 
@@ -45,23 +51,29 @@ else:
 #2
 
 
+s = "Unfortunately one of those moments wasn't a giant squid monster. User_mentions:2, likes: 9, number of retweets: 7"
+s
 
 #3
 
+analisis_sentimientos = datos.read_pandas(path,780,782)
 
-
+for tweet in analisis_sentimientos:
+    print(tweet)
+    
+    
 
 #4
 
 
-# Escriba una expresión regular para validar un correo
+
 regex = r""
 
 emails = ['n.john.smith@gmail.com', '87victory@hotmail.com', '!#mary-=@msca.net']
 for example in emails:
-    # Match the regex to the string
+    
     if re.match(regex, example):
-        # Complete the format method to print out the result
+        
         print("The email {email_example} is a valid email".format(email_example=example))
     else:
         print("The email {email_example} is invalid".format(email_example=example))   
